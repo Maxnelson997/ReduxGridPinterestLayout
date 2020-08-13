@@ -1,9 +1,11 @@
-## Redux + CSS Grid
+## Redux & Routing
 Users can favorite photos displayed on a pinterest style layout.
-I created this project to exemplify my understanding of **Redux & CSS Grid**
-Includes:
-- **Redux Dev Tools**
+I created this project to exemplify my understanding of **Redux & Routing**.
+
+## Technologies Used:
 - **React**
+- **react-router-dom**
+- **Redux Dev Tools**
 - **Redux**
 - **CSS Grid**
 

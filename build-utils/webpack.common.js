@@ -25,7 +25,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Webpack + Babel + React + More',
+            title: 'Redux',
             template: './src/index.html'
         }),
         new webpack.HotModuleReplacementPlugin(),
