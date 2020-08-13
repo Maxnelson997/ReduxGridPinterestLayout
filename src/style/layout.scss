@@ -1,0 +1,31 @@
+
+.app-wrapper {
+    height: auto;
+    width: 100%;
+    min-height: 100vh;
+    
+    display: grid;
+    grid-template-rows: 20px [s] 1fr [e] 20px;
+    grid-template-columns: 20px [s] 1fr [e] 20px;
+}
+
+
+.layout {
+    grid-row: s/e;
+    grid-column: s/e;
+
+    display: grid;
+    grid-template-rows: [nav-s] 50px [nav-e content-s] 1fr [content-e footer-s] 50px [foooter-e];
+    grid-template-columns: [nav-s content-s footer-s] 1fr [nav-e content-e footer-e];
+
+    &__nav {
+        background: blue;
+        grid-row: nav-s/nav-e;
+        grid-column: nav-s/nav-e;
+    }
+    &__footer {
+        background: red;
+        grid-row: footer-s/footer-e;
+        grid-column: footer-s/footer-e;
+    }
+}

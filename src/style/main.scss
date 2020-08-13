@@ -1,5 +1,12 @@
+
+
 $body-color: ghostwhite;
 
 body {
     background: $body-color;
 }
+
+@import './layout';
+@import './mixins';
+@import './pinterest-grid';
+@import './favorites-grid';

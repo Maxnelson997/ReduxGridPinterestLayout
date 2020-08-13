@@ -5,12 +5,11 @@ import './style/main.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-
 ReactDOM.render(
     <Layout>
         
     </Layout>,
-    document.getElementById('app')
+    document.getElementById('app-wrapper')
 )
 
 module.hot.accept();
