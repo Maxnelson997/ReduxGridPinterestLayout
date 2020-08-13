@@ -9,7 +9,7 @@ I created this project to exemplify my understanding of **Redux & Routing**.
 - **Redux**
 - **CSS Grid**
 
-## The Scaffolding/Boilerplate of this project includes:
+## Webpack & Babel
  - **Development & production webpack configs**
  - **Common & Merge webpack configs**
  - **Source mapping options**
@@ -17,5 +17,6 @@ I created this project to exemplify my understanding of **Redux & Routing**.
  - **Webpack Addons**
  - **Babel**
  - **React** 
+##### Generated from my [WebpackBabelReact-InDepth](https://github.com/Maxnelson997/WebpackBabelReact-InDepth) repo. All commits available.
 
 ##### See [My Website](https://www.maxnelson.io) For More Development Related Content.
