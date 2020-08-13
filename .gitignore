@@ -3,3 +3,4 @@ dist
 .DS_Store
 .env.production
 .env.development
+package-lock.json
