@@ -19,12 +19,10 @@
     grid-template-columns: [nav-s content-s footer-s] 1fr [nav-e content-e footer-e];
 
     &__nav {
-        background: blue;
         grid-row: nav-s/nav-e;
         grid-column: nav-s/nav-e;
     }
     &__footer {
-        background: red;
         grid-row: footer-s/footer-e;
         grid-column: footer-s/footer-e;
     }
