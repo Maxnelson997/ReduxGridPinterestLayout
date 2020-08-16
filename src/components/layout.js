@@ -7,7 +7,9 @@ export default class Layout extends Component {
     return (
       <div className='layout'>
         <Nav className='layout__nav'/>
-        {this.props.children}
+        <div className='layout__content'>
+          {this.props.children}
+        </div>
         <Footer className='layout__footer'/>
       </div>
     );

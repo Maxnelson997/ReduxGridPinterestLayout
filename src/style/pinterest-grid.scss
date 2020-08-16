@@ -1,3 +1,29 @@
 .pinterest-grid {
+    display: grid;
+    grid-template-rows: [title-s] 50px [title-e photos-s] 1fr [photos-e];
+    
+    // box-sizing: border-box;
+    // padding: 0px 40px;
+
+    &__title {
+        @include header-md;
+        grid-row: title-s/title-e;
+        grid-column: title-s/title-e;
+    }
+    &__photos {
+        grid-row: photos-s/photos-e;
+        grid-column: photos-s/photos-e;
+    }
+}
+
+.pinterest-grid-photos {
     @include columnGrid;
+    grid-gap: 85px;
+
+    &__photo {
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
 }

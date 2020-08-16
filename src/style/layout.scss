@@ -1,18 +1,19 @@
 
 .app-wrapper {
     height: auto;
-    width: 100%;
+    width: 100vw;
     min-height: 100vh;
     
     display: grid;
     grid-template-rows: 20px [s] 1fr [e] 20px;
-    grid-template-columns: 20px [s] 1fr [e] 20px;
+    grid-template-columns: 50px [s] 1fr [e] 50px;
 }
-
 
 .layout {
     grid-row: s/e;
     grid-column: s/e;
+
+    max-width: 100%;
 
     display: grid;
     grid-template-rows: [nav-s] 50px [nav-e content-s] 1fr [content-e footer-s] 50px [foooter-e];
@@ -21,9 +22,25 @@
     &__nav {
         grid-row: nav-s/nav-e;
         grid-column: nav-s/nav-e;
+        width: 100%;
+    }
+    &__content {
+        grid-row: content-s/content-e;
+        grid-column: content-s/content-e;
+        width: 100%;
+        // min-width: 0;
     }
     &__footer {
         grid-row: footer-s/footer-e;
         grid-column: footer-s/footer-e;
+    }
+}
+
+.layout {
+    &__content {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 85px;
     }
 }
