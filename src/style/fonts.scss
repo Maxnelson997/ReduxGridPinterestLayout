@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Computer Regular', 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: 'Rubik-Regular', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+  @font-face {
+    font-family: 'Rubik-Regular';
+    src: local('Rubik-Regular'), url(../fonts/Rubik-Regular.ttf) format('truetype');
+  }
+  
+  
+  #root {
+    color: white;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Rubik-Regular';
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
