@@ -33,6 +33,9 @@
     "webpack-visualizer-plugin": "^0.1.11"
   },
   "dependencies": {
+    "express": "^4.17.1",
+    "install": "^0.13.0",
+    "npm": "^6.14.8",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }
