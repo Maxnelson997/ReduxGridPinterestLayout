@@ -2,8 +2,11 @@
 
 Users can favorite photos displayed on a pinterest style layout.
 
-This app was built to show my understanding of all listed technoloiges.
-**however** my main focus when building this app was to emphasize my understanding of **Redux**.
+This app was built to show my understanding of all listed technologies.
+
+**However**, my main focus when building this app was to emphasize my understanding of **Redux**.
+
+[see it here](https://picgrid.herokuapp.com/) - Redux dev tools enabled
 
 ## Technologies Used:
 - **React**
