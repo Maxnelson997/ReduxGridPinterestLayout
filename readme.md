@@ -1,15 +1,15 @@
-## Redux & Routing
+
 Users can favorite photos displayed on a pinterest style layout.
-I created this project to exemplify my understanding of **Redux & Routing**.
 
 ## Technologies Used:
 - **React**
-- **react-router-dom**
-- **Redux Dev Tools**
 - **Redux**
+- **Redux Dev Tools**
+- **react-router-dom**
 - **CSS Grid**
+- **Node & Express (prod hosting)**
 
-## Webpack & Babel
+## Webpack & Babel setup
  - **Development & production webpack configs**
  - **Common & Merge webpack configs**
  - **Source mapping options**
@@ -17,6 +17,8 @@ I created this project to exemplify my understanding of **Redux & Routing**.
  - **Webpack Addons**
  - **Babel**
  - **React** 
+ - **SCSS**
+ 
 ##### Generated from my [WebpackBabelReact-InDepth](https://github.com/Maxnelson997/WebpackBabelReact-InDepth) repo. All commits available.
 
 ##### See [My Website](https://www.maxnelson.io) For More Development Related Content.
