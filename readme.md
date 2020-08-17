@@ -1,5 +1,9 @@
+## Pic Grid 
 
 Users can favorite photos displayed on a pinterest style layout.
+
+This app was built to show my understanding of all listed technoloiges.
+**however** my main focus when building this app was to emphasize my understanding of **Redux**.
 
 ## Technologies Used:
 - **React**
