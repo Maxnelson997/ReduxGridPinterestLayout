@@ -1,3 +1,4 @@
+import 'regenerator-runtime/runtime'
 import Layout from './components/layout';
 
 import './style/main.scss';

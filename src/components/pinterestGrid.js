@@ -10,6 +10,16 @@ const photos = [
 ]
 
 class PinterestGrid extends Component {
+
+    constructor() {
+        super()
+
+        const asyncTest = async () => {
+            
+        }
+
+        asyncTest()
+    }
     render() {
         const { title } = this.props;
         return (
