@@ -49,6 +49,8 @@ class PinterestGrid extends Component {
                     PHOTOS.map((photo, index) => {
                         return (
                             <div className='pinterest-grid-photos__brick' key={index}>
+                                <div className='pinterest-grid-photos__brick__heart'>Heart</div>
+                                <div className='pinterest-grid-photos__brick__opaque-cover'></div>
                                 <div className='pinterest-grid-photos__brick__photo'>
                                     <img className='pinterest-photo' src={photo}/>
                                 </div>
