@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import heart from '../assets/heart.svg';
+import heartFilled from '../assets/heartFilled.svg';
 
 const PHOTOS = [
     'https://source.unsplash.com/collection/1538121',
@@ -49,6 +51,9 @@ class PinterestGrid extends Component {
                     PHOTOS.map((photo, index) => {
                         return (
                             <div className='pinterest-grid-photos__brick' key={index}>
+                                <img className='pinterest-grid-photos__brick__heart' src={heart}/>
+                                <img className='pinterest-grid-photos__brick__heart-filled' src={heartFilled}/>
+                                <div className='pinterest-grid-photos__brick__opaque-cover'></div>
                                 <div className='pinterest-grid-photos__brick__photo'>
                                     <img className='pinterest-photo' src={photo}/>
                                 </div>
