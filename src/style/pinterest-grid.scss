@@ -35,11 +35,18 @@
             grid-column: 1/-1;
         }
         
-        &__heart {
+        &__heart,
+        &__heart-filled {
             position: absolute;
             bottom: 10px; 
             right: 10px;
-            z-index: 1;
+            height: 16px;
+            width: 16px;
+            z-index: 10;
+        }
+        &__heart-filled {
+            opacity: 0;
+            z-index: 11;
         }
         &__photo {
             img {
@@ -62,17 +69,15 @@
 .pinterest-grid-photos {
     &__brick {
         transition: all .3s ease;
-        &__opaque-cover {
-            transition: all .3s ease;
-        }
+        &__opaque-cover { transition: all .3s ease; }
+        &__heart,
+        &__heart-filled { transition: all .3s ease; }
     }
-    &__brick:hover {
-        transform: scale(0.97);
-    }
+    &__brick:hover { transform: scale(0.97) }
     &__brick {
-        &__opaque-cover:hover {
-            background: none;
-        }
+        &__opaque-cover:hover { background: none; }
+        &__heart:hover {}
+        &__heart-filled:hover {}
     }
 }
 
