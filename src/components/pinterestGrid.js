@@ -2,13 +2,7 @@ import React, { Component } from 'react';
 import heart from '../assets/heart.svg';
 import heartFilled from '../assets/heartFilled.svg';
 
-const PHOTOS = [
-    'https://source.unsplash.com/collection/1538121',
-    'https://source.unsplash.com/collection/219941',
-    'https://source.unsplash.com/collection/1353730',
-    'https://source.unsplash.com/collection/1708734',
-    'https://source.unsplash.com/collection/531563',
-]
+import { connect } from 'react-redux';
 
 class PinterestGrid extends Component {
 
@@ -48,7 +42,7 @@ class PinterestGrid extends Component {
                 <div className='pinterest-grid__title'>{title}</div>
                 <div className='pinterest-grid__photos pinterest-grid-photos'>
                 {
-                    PHOTOS.map((photo, index) => {
+                    this.props.photos != null ? this.props.photos.map((photo, index) => {
                         return (
                             <div className='pinterest-grid-photos__brick' key={index}>
                                 <img className='pinterest-grid-photos__brick__heart' src={heart}/>
@@ -59,7 +53,7 @@ class PinterestGrid extends Component {
                                 </div>
                             </div>
                         )
-                    })
+                    }) : ''
                 }
                 </div>
             </div>
@@ -67,4 +61,11 @@ class PinterestGrid extends Component {
     }
 }
 
+function mapStateToProps(state) {
+    return {
+        photos: state.photos.photos
+    }
+}
+
+PinterestGrid = connect(mapStateToProps)(PinterestGrid);
 export default PinterestGrid;
