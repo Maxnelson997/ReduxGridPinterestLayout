@@ -35,6 +35,10 @@ class PinterestGrid extends Component {
   
     }
 
+    handleHeartClick = () => {
+        alert('heart clicked');
+    }
+
     render() {
         const { title } = this.props;
         return (
@@ -45,7 +49,7 @@ class PinterestGrid extends Component {
                     this.props.photos != null ? this.props.photos.map((photo, index) => {
                         return (
                             <div className='pinterest-grid-photos__brick' key={index}>
-                                <img className='pinterest-grid-photos__brick__heart' src={heart}/>
+                                <img className='pinterest-grid-photos__brick__heart' onClick={() => this.handleHeartClick()} src={heart}/>
                                 <img className='pinterest-grid-photos__brick__heart-filled' src={heartFilled}/>
                                 <div className='pinterest-grid-photos__brick__opaque-cover'></div>
                                 <div className='pinterest-grid-photos__brick__photo'>

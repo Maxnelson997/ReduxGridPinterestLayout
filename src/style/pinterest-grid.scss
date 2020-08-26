@@ -46,7 +46,7 @@
         }
         &__heart-filled {
             opacity: 0;
-            z-index: 11;
+            z-index: 9;
         }
         &__photo {
             img {
@@ -58,7 +58,7 @@
         &__opaque-cover {
             height: 100%;
             width: 100%;
-            z-index: 10;
+            z-index: 8;
             background: rgba(70, 70, 70, 0.45);
         }
     }
