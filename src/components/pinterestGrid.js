@@ -4,6 +4,8 @@ import heartFilled from '../assets/heartFilled.svg';
 
 import { connect } from 'react-redux';
 
+import { updateFavoriteStatusWithID  } from '../actions/index';
+
 class PinterestGrid extends Component {
 
     constructor() {
@@ -35,17 +37,16 @@ class PinterestGrid extends Component {
   
     }
 
-    handleHeartClick = () => {
-        // 1. communicate with store to indicate favorite photo. 
-
+    handleHeartClick = (_id) => {
+        this.props.updateFavoriteStatusWithID(_id);
     }
 
-    handlePhotoFavoriteStatus = (favorited) => {
+    handlePhotoFavoriteStatus = ({favorited, _id}) => {
         let jsx;
         favorited ?
-            jsx = <img className='pinterest-grid-photos__brick__heart' onClick={() => this.handleHeartClick()} src={heartFilled}/>
+            jsx = <img className='pinterest-grid-photos__brick__heart' onClick={() => this.handleHeartClick(_id)} src={heartFilled}/>
         :
-            jsx = <img className='pinterest-grid-photos__brick__heart' onClick={() => this.handleHeartClick()} src={heart}/>
+            jsx = <img className='pinterest-grid-photos__brick__heart' onClick={() => this.handleHeartClick(_id)} src={heart}/>
         return jsx;
     }
 
@@ -59,7 +60,7 @@ class PinterestGrid extends Component {
                     this.props.photos != null ? this.props.photos.map(photo => {
                         return (
                             <div className='pinterest-grid-photos__brick' key={photo._id}>
-                                {this.handlePhotoFavoriteStatus(photo.favorited)}
+                                {this.handlePhotoFavoriteStatus(photo)}
                                 <div className='pinterest-grid-photos__brick__opaque-cover'></div>
                                 <div className='pinterest-grid-photos__brick__photo'>
                                     <img className='pinterest-photo' src={photo.imageURL}/>
@@ -80,5 +81,5 @@ function mapStateToProps(state) {
     }
 }
 
-PinterestGrid = connect(mapStateToProps)(PinterestGrid);
+PinterestGrid = connect(mapStateToProps, {updateFavoriteStatusWithID})(PinterestGrid);
 export default PinterestGrid;

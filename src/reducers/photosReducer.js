@@ -1,4 +1,7 @@
-import  { FETCH_PHOTOS } from '../actions/types';
+import  { 
+    FETCH_PHOTOS,
+    UPDATE_FAVORITE_STATUS_WITH_ID
+} from '../actions/types';
 
 const INITIAL_STATE = {
     photos: [
@@ -36,6 +39,14 @@ export default function(state = INITIAL_STATE, action) {
             alert(action.payload)
             return {
                 ...state,
+            }
+        case UPDATE_FAVORITE_STATUS_WITH_ID:
+            let photos = Object.assign([], state.photos)
+            let photo = photos.find(photo => photo._id == action.payload);
+            photos[photo._id].favorited = !photos[photo._id].favorited
+            return {
+                ...state,
+                photos
             }
         default: 
             return state;
