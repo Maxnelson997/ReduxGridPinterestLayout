@@ -25,7 +25,7 @@ const INITIAL_STATE = {
         {
             _id: 4,
             imageURL: 'https://source.unsplash.com/collection/531563',
-            favorited: false,
+            favorited: true,
         },
     ]
 }

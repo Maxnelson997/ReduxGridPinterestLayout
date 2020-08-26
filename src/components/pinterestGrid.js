@@ -36,7 +36,17 @@ class PinterestGrid extends Component {
     }
 
     handleHeartClick = () => {
-        // 1. communicate with store to indicate favorite photo. -- this requires refactor of photo data, brb.
+        // 1. communicate with store to indicate favorite photo. 
+
+    }
+
+    handlePhotoFavoriteStatus = (favorited) => {
+        let jsx;
+        favorited ?
+            jsx = <img className='pinterest-grid-photos__brick__heart' onClick={() => this.handleHeartClick()} src={heartFilled}/>
+        :
+            jsx = <img className='pinterest-grid-photos__brick__heart' onClick={() => this.handleHeartClick()} src={heart}/>
+        return jsx;
     }
 
     render() {
@@ -49,8 +59,7 @@ class PinterestGrid extends Component {
                     this.props.photos != null ? this.props.photos.map(photo => {
                         return (
                             <div className='pinterest-grid-photos__brick' key={photo._id}>
-                                <img className='pinterest-grid-photos__brick__heart' onClick={() => this.handleHeartClick()} src={heart}/>
-                                <img className='pinterest-grid-photos__brick__heart-filled' src={heartFilled}/>
+                                {this.handlePhotoFavoriteStatus(photo.favorited)}
                                 <div className='pinterest-grid-photos__brick__opaque-cover'></div>
                                 <div className='pinterest-grid-photos__brick__photo'>
                                     <img className='pinterest-photo' src={photo.imageURL}/>
