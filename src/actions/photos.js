@@ -1,5 +1,6 @@
 import { 
     FETCH_PHOTOS,
+    UPDATE_FAVORITE_STATUS_WITH_ID
 } from './types';
 
 export function fetchPhotos() {
@@ -11,9 +12,11 @@ export function fetchPhotos() {
     }
 }
 
-
-// export const signUp = (userData) => async dispatch => {
-//     console.log(...userData)
-//     const res = await axios.post('/api/signup', userData);
-//     dispatch({ type: SET_USER, payload: res.data.user });
-//   };
+export function updateFavoriteStatusWithID(_id) {
+    return function(dispatch) {
+        dispatch({
+            type: UPDATE_FAVORITE_STATUS_WITH_ID,
+            payload: _id
+        })
+    }
+}

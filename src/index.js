@@ -13,16 +13,40 @@ import reduxThunk from 'redux-thunk';
 
 import reducers from './reducers';
 
+import { connect } from 'react-redux';
+
+const Root = ({favoritedPhotos, notFavoritedPhotos}) => {
+    return (
+        <Layout>
+            <PinterestGrid title='foto feed' photos={notFavoritedPhotos}/>
+            <PinterestGrid title='favorited' photos={favoritedPhotos}/>
+        </Layout>
+    )
+};
+
+function mapStateToProps(state) {
+    let notFavoritedPhotos = state.photos.photos.filter(photo => {
+        return !photo.favorited
+    })
+    let favoritedPhotos = state.photos.photos.filter(photo => {
+        return photo.favorited
+    })
+    return {
+        notFavoritedPhotos,
+        favoritedPhotos
+    }
+}
+
+const RootWithRedux = connect(mapStateToProps)(Root);
+
 const createStoreWithDevTools = applyMiddleware(reduxThunk)(compose((window.devToolsExtension ? window.devToolsExtension():f=>f)(createStore)))
 
 ReactDOM.render(
     <Provider store={createStoreWithDevTools(reducers)}>
-        <Layout>
-            <PinterestGrid title='Foto Feed'/>
-            <PinterestGrid title='Favorites'/>
-        </Layout>
+        <RootWithRedux/>
     </Provider>,
     document.getElementById('app-wrapper')
 )
 
 module.hot.accept();
+
