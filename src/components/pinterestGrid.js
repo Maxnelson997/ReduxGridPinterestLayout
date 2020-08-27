@@ -58,15 +58,13 @@ class PinterestGrid extends Component {
                 <div className='pinterest-grid__photos pinterest-grid-photos'>
                 {
                     this.props.photos != null ? this.props.photos.map(photo => {
-                        return (
-                            <div className='pinterest-grid-photos__brick' key={photo._id}>
+                           return <div className='pinterest-grid-photos__brick' key={photo._id}>
                                 {this.handlePhotoFavoriteStatus(photo)}
                                 <div className='pinterest-grid-photos__brick__opaque-cover'></div>
                                 <div className='pinterest-grid-photos__brick__photo'>
                                     <img className='pinterest-photo' src={photo.imageURL}/>
                                 </div>
                             </div>
-                        )
                     }) : ''
                 }
                 </div>
@@ -75,11 +73,5 @@ class PinterestGrid extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        photos: state.photos.photos
-    }
-}
-
-PinterestGrid = connect(mapStateToProps, {updateFavoriteStatusWithID})(PinterestGrid);
+PinterestGrid = connect(null, {updateFavoriteStatusWithID})(PinterestGrid);
 export default PinterestGrid;
