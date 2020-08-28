@@ -6,30 +6,35 @@ import { connect } from 'react-redux';
 
 import { updateFavoriteStatusWithID  } from '../actions/index';
 
+const resizeMasonryItem = (item) => {
+    var grid = document.getElementsByClassName('pinterest-grid-photos')[0]
+    var rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'))
+    var rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+        
+    let heightWithGap = item.querySelector('.pinterest-grid-photos__brick__photo').getBoundingClientRect().height + rowGap
+    let rowHeightWithGap = rowHeight + rowGap
+    var rowSpan = Math.floor(heightWithGap / rowHeightWithGap);
+
+    item.style.gridRowEnd = 'span ' + rowSpan;
+}
+
+const resizeAllMasonryItems = () => {
+    var allItems = document.getElementsByClassName('pinterest-grid-photos__brick');
+    for(var i = 0; i < allItems.length; i++){
+        resizeMasonryItem(allItems[i]);
+    }
+}
+
+
 class PinterestGrid extends Component {
 
+    componentDidUpdate() {
+        resizeAllMasonryItems()
+    }
+    
     constructor() {
         super()
 
-        const resizeMasonryItem = (item) => {
-            var grid = document.getElementsByClassName('pinterest-grid-photos')[0]
-            var rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'))
-            var rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
-                
-            let heightWithGap = item.querySelector('.pinterest-grid-photos__brick__photo').getBoundingClientRect().height+rowGap
-            let rowHeightWithGap = rowHeight+rowGap
-            var rowSpan = Math.floor(heightWithGap/rowHeightWithGap);
-        
-            item.style.gridRowEnd = 'span '+rowSpan;
-        }
-
-        const resizeAllMasonryItems = () => {
-            var allItems = document.getElementsByClassName('pinterest-grid-photos__brick');
-            for(var i=0;i<allItems.length;i++){
-            resizeMasonryItem(allItems[i]);
-            }
-        }
-  
         var masonryEvents = ['load', 'resize'];
         masonryEvents.forEach(event => {
             window.addEventListener(event, resizeAllMasonryItems);
